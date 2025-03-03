@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Portfolio | John Doe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900/80 backdrop-blur-lg z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white font-bold text-xl">
+                    JD<span class="text-purple-400">.</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-purple-400 transition">Home</a>
+                    <a href="#projects" class="text-gray-300 hover:text-purple-400 transition">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-purple-400 transition">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-purple-400 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center">
+            <div class="md:w-1/2 mt-12 md:mt-0">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Hi, I'm <span class="text-purple-400">John Doe</span>
+                </h1>
+                <p class="text-gray-300 text-lg mb-8">
+                    Full Stack Developer & UI/UX Enthusiast
+                </p>
+                <button class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-full transition-transform transform hover:scale-105">
+                    View My Work
+                </button>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-purple-400 float-animation">
+                    <img src="https://images5.alphacoders.com/413/413842.jpg" alt="Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/400x250" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-300">Full-stack e-commerce solution with React & Node.js</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- Skills Section -->
+<section id="skills" class="py-20">
+  <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Technical Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <!-- Skill Item 1 -->
+          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
+              <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-[#61DAFB]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 14.672l-3.373 1.969.64-3.726-2.714-2.643 3.752-.546L12 6.5l1.695 3.226 3.752.546-2.714 2.643.64 3.726zM12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12S0 18.623 0 12 5.377 0 12 0z"/>
+                      </svg>
+                  </div>
+                  <span class="text-white font-medium">React</span>
+              </div>
+          </div>
+
+          <!-- Skill Item 2 -->
+          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
+              <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-[#38B2AC]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 6.306l-6.218 6.218L12 18.742l6.218-6.218L12 6.306zM12 0L0 12l12 12 12-12L12 0z"/>
+                      </svg>
+                  </div>
+                  <span class="text-white font-medium">Tailwind CSS</span>
+              </div>
+          </div>
+
+          <!-- Skill Item 3 -->
+          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
+              <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-[#3178C6]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.125 17.502l-3.644-3.645 1.768-1.768 1.876 1.877 4.586-4.586 1.768 1.768-6.354 6.354z"/>
+                      </svg>
+                  </div>
+                  <span class="text-white font-medium">TypeScript</span>
+              </div>
+          </div>
+
+          <!-- Skill Item 4 -->
+          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
+              <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-[#339933]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.716 17.753l-1.11-1.664 3.119-2.08-3.119-2.079 1.11-1.664L9.84 12l-3.124 2.081zm4.324 2.43H9.25l-1.845-5.485h1.845l1.159 3.443 1.158-3.443h1.845l-1.844 5.485zm5.932-2.43l-3.124-2.081 3.124-2.081-1.11-1.664-3.119 2.079 3.119-2.08-1.11-1.664L14.16 12l3.124 2.081z"/>
+                      </svg>
+                  </div>
+                  <span class="text-white font-medium">Node.js</span>
+              </div>
+          </div>
+
+          <!-- Skill Item 5 -->
+          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
+              <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-[#4479A1]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22.5C6.21 22.5 1.5 17.79 1.5 12S6.21 1.5 12 1.5 22.5 6.21 22.5 12 17.79 22.5 12 22.5zm4.5-6.75l-1.5-1.5-2.25 2.25-2.25-2.25-1.5 1.5 2.25 2.25-2.25 2.25 1.5 1.5 2.25-2.25 2.25 2.25 1.5-1.5-2.25-2.25z"/>
+                      </svg>
+                  </div>
+                  <span class="text-white font-medium">PostgreSQL</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800/30">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Get In Touch</h2>
+            <form class="space-y-6">
+                <div>
+                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+                <div>
+                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+                <div>
+                    <textarea rows="5" placeholder="Your Message" class="w-full px-4 py-3 bg-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                </div>
+                <button class="w-full bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-lg transition-transform transform hover:scale-[1.02]">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center text-gray-400">
+                © 2023 John Doe. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
