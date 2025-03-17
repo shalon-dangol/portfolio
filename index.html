@@ -1,180 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Shalon Dangol</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalon Dangol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+
+    @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0) scale(1.05); }
+    50% { transform: translateY(-6px) scale(1.05); }
+  }
+  
+  .animate-bounce-subtle {
+    animation: floatUpDown 3s ease-in-out infinite;
+  }
+  
+  .zoom-effect {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-container {
+    overflow: hidden;
+  }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-gray-900/80 backdrop-blur-lg z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-white font-bold text-xl">
-                    SD<span class="text-purple-400">.</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-purple-400 transition">Home</a>
-                    <a href="#projects" class="text-gray-300 hover:text-purple-400 transition">Projects</a>
-                    <a href="#skills" class="text-gray-300 hover:text-purple-400 transition">Skills</a>
-                    <a href="#contact" class="text-gray-300 hover:text-purple-400 transition">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center">
-            <div class="md:w-1/2 mt-12 md:mt-0">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Hi, I'm <span class="text-purple-400">Shalon Dangol</span>
-                </h1>
-                <p class="text-gray-300 text-lg mb-8">
-                    Frontend Developer
-                </p>
-                <button class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-full transition-transform transform hover:scale-105">
-                    View My Work
-                </button>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-purple-400 float-animation">
-                    <img src="https://images5.alphacoders.com/413/413842.jpg" alt="Profile" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-800/30">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition duration-300">
-                    <img src="https://via.placeholder.com/400x250" alt="Project" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">E-commerce Platform</h3>
-                        <p class="text-gray-300">Full-stack e-commerce solution with React & Node.js</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more project cards -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <!-- Skills Section -->
-<section id="skills" class="py-20">
-  <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Technical Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          <!-- Skill Item 1 -->
-          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
-              <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
-                      <svg class="w-6 h-6 text-[#61DAFB]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path fill="currentColor" d="M12 14.672l-3.373 1.969.64-3.726-2.714-2.643 3.752-.546L12 6.5l1.695 3.226 3.752.546-2.714 2.643.64 3.726zM12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12S0 18.623 0 12 5.377 0 12 0z"/>
-                      </svg>
-                  </div>
-                  <span class="text-white font-medium">React</span>
-              </div>
-          </div>
-
-          <!-- Skill Item 2 -->
-          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
-              <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
-                      <svg class="w-6 h-6 text-[#38B2AC]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path fill="currentColor" d="M12 6.306l-6.218 6.218L12 18.742l6.218-6.218L12 6.306zM12 0L0 12l12 12 12-12L12 0z"/>
-                      </svg>
-                  </div>
-                  <span class="text-white font-medium">Tailwind CSS</span>
-              </div>
-          </div>
-
-          <!-- Skill Item 3 -->
-          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
-              <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
-                      <svg class="w-6 h-6 text-[#3178C6]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.125 17.502l-3.644-3.645 1.768-1.768 1.876 1.877 4.586-4.586 1.768 1.768-6.354 6.354z"/>
-                      </svg>
-                  </div>
-                  <span class="text-white font-medium">TypeScript</span>
-              </div>
-          </div>
-
-          <!-- Skill Item 4 -->
-          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
-              <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
-                      <svg class="w-6 h-6 text-[#339933]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.716 17.753l-1.11-1.664 3.119-2.08-3.119-2.079 1.11-1.664L9.84 12l-3.124 2.081zm4.324 2.43H9.25l-1.845-5.485h1.845l1.159 3.443 1.158-3.443h1.845l-1.844 5.485zm5.932-2.43l-3.124-2.081 3.124-2.081-1.11-1.664-3.119 2.079 3.119-2.08-1.11-1.664L14.16 12l3.124 2.081z"/>
-                      </svg>
-                  </div>
-                  <span class="text-white font-medium">Node.js</span>
-              </div>
-          </div>
-
-          <!-- Skill Item 5 -->
-          <div class="group p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
-              <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
-                      <svg class="w-6 h-6 text-[#4479A1]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22.5C6.21 22.5 1.5 17.79 1.5 12S6.21 1.5 12 1.5 22.5 6.21 22.5 12 17.79 22.5 12 22.5zm4.5-6.75l-1.5-1.5-2.25 2.25-2.25-2.25-1.5 1.5 2.25 2.25-2.25 2.25 1.5 1.5 2.25-2.25 2.25 2.25 1.5-1.5-2.25-2.25z"/>
-                      </svg>
-                  </div>
-                  <span class="text-white font-medium">PostgreSQL</span>
-              </div>
-          </div>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 font-sans">
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-600">Shalon Dangol</div>
+      
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#about" class="hover:text-blue-600 transition-colors py-2">About</a>
+        <a href="#skills" class="hover:text-blue-600 transition-colors py-2">Skills</a>
+        <a href="#projects" class="hover:text-blue-600 transition-colors py-2">Projects</a>
+        <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">Contact</a>
       </div>
-  </div>
-</section>
+      
+      <div class="md:hidden">
+        <button id="mobile-menu-toggle" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+      <div class="flex flex-col items-center justify-center h-full space-y-6 relative">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <a href="#about" class="text-2xl hover:text-blue-600 mobile-menu-link">About</a>
+        <a href="#skills" class="text-2xl hover:text-blue-600 mobile-menu-link">Skills</a>
+        <a href="#projects" class="text-2xl hover:text-blue-600 mobile-menu-link">Projects</a>
+        <a href="#contact" class="text-2xl bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 mobile-menu-link">Contact</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800/30">
-        <div class="container mx-auto px-6 max-w-2xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Get In Touch</h2>
-            <form class="space-y-6">
-                <div>
-                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <div>
-                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <div>
-                    <textarea rows="5" placeholder="Your Message" class="w-full px-4 py-3 bg-gray-900 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
-                </div>
-                <button class="w-full bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-lg transition-transform transform hover:scale-[1.02]">
-                    Send Message
-                </button>
-            </form>
+  <main class="container mx-auto px-4 py-12">
+    <section id="about" class="flex items-center min-h-[80vh] animate-fade-in">
+      <div class="w-full grid md:grid-cols-2 gap-8 items-center">
+        <div class="flex justify-center">
+            <div class="w-64 h-64 bg-blue-100 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow profile-container">
+              <img src="https://media.licdn.com/dms/image/v2/D5603AQFFJnAVMXFzAQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668359009863?e=1746662400&v=beta&t=QmBNue82rgPodnYfXnja_yO7SgbEKy81Dl_pMpemr3o" alt="Alex Rivera" class="w-full h-full object-cover animate-bounce-subtle zoom-effect">
+            </div>
+          </div>
+        <div>
+          <h1 class="text-4xl font-bold mb-4">Hi, I'm <span class="text-blue-600">Shalon</span></h1>
+          <p class="text-lg mb-6 text-gray-600">A passionate Junior React Developer with a strong foundation in frontend technologies. Recently graduated with a degree in Bachelor in Computer Application (BCA).
+        </p>
+          <div class="flex space-x-4">
+            <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">View Work</a>
+            <a href="#contact" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition-colors">Hire Me</a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-6">
-            <div class="text-center text-gray-400">
-                © 2023 Shalon. All rights reserved.
-            </div>
+    <section id="skills" class="py-16 px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">My Skills</h2>
+        <div class="flex flex-wrap justify-center gap-8 mx-auto max-w-6xl">
+          <!-- Skill Card 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow w-full min-w-[300px] max-w-sm">
+            <i class="fas fa-code text-5xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+            <p class="text-gray-600">Creating responsive and interactive web applications using modern technologies.</p>
+          </div>
+      
+          <!-- Skill Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow w-full min-w-[300px] max-w-sm">
+            <i class="fas fa-mobile-alt text-5xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Mobile Development</h3>
+            <p class="text-gray-600">Building cross-platform mobile applications with modern frameworks.</p>
+          </div>
         </div>
-    </footer>
+      </section>
+
+    <section id="projects" class="py-16">
+      <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+      <!-- <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gray-200">
+            <img src="/api/placeholder/400/300" alt="Project 1" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Smart Home Dashboard</h3>
+            <p class="text-gray-600 mb-4">A comprehensive IoT management application for home automation.</p>
+            <a href="#" class="text-blue-600 hover:underline">View Project</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gray-200">
+            <img src="/api/placeholder/400/300" alt="Project 2" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+            <p class="text-gray-600 mb-4">A scalable online marketplace with integrated payment solutions.</p>
+            <a href="#" class="text-blue-600 hover:underline">View Project</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gray-200">
+            <img src="/api/placeholder/400/300" alt="Project 3" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Health Tracking App</h3>
+            <p class="text-gray-600 mb-4">A mobile application for personal health and fitness monitoring.</p>
+            <a href="#" class="text-blue-600 hover:underline">View Project</a>
+          </div>
+        </div>
+      </div> -->
+      <h3 class="text-3xl font-bold text-center mb-12">Coming Soon ...</h3>
+
+    </section>
+
+    <section id="contact" class="py-16 bg-blue-50 rounded-lg">
+        <div class="max-w-xl mx-auto text-center px-4 sm:px-6">
+          <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
+          <p class="text-gray-600 mb-8">Interested in collaboration or have a project in mind? Drop me a message!</p>
+          <form class="space-y-4 max-w-md mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <div class="flex justify-center">
+              <button type="submit" class="px-8 md:px-12 bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">Send Message</button>
+            </div>
+            <h4 class="text-red-700">(This feature is not implemented yet!!)</h4>
+          </form>
+        </div>
+      </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div>&copy; 2025 Shalon. All Rights Reserved.</div>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/shalon-dangol/" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shalon-dangol" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
+        <!-- <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a> -->
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    // Open mobile menu
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
+
+    // Close mobile menu
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-0');
+      mobileMenu.classList.add('translate-x-full');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+      });
+    });
+  </script>
 </body>
 </html>
