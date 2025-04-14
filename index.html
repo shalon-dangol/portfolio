@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shalon Dangol</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("zVAyq0Ykcdxd0W8e5"); 
+    })();
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
 
@@ -100,38 +106,6 @@
 
     <section id="projects" class="py-16">
       <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-      <!-- <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-          <div class="h-48 bg-gray-200">
-            <img src="/api/placeholder/400/300" alt="Project 1" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Smart Home Dashboard</h3>
-            <p class="text-gray-600 mb-4">A comprehensive IoT management application for home automation.</p>
-            <a href="#" class="text-blue-600 hover:underline">View Project</a>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-          <div class="h-48 bg-gray-200">
-            <img src="/api/placeholder/400/300" alt="Project 2" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
-            <p class="text-gray-600 mb-4">A scalable online marketplace with integrated payment solutions.</p>
-            <a href="#" class="text-blue-600 hover:underline">View Project</a>
-          </div>
-        </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-          <div class="h-48 bg-gray-200">
-            <img src="/api/placeholder/400/300" alt="Project 3" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Health Tracking App</h3>
-            <p class="text-gray-600 mb-4">A mobile application for personal health and fitness monitoring.</p>
-            <a href="#" class="text-blue-600 hover:underline">View Project</a>
-          </div>
-        </div>
-      </div> -->
       <h3 class="text-3xl font-bold text-center mb-12">Coming Soon ...</h3>
 
     </section>
@@ -140,14 +114,18 @@
         <div class="max-w-xl mx-auto text-center px-4 sm:px-6">
           <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
           <p class="text-gray-600 mb-8">Interested in collaboration or have a project in mind? Drop me a message!</p>
-          <form class="space-y-4 max-w-md mx-auto">
-            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <form id="contact-form" class="space-y-4 max-w-md mx-auto">
+            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <textarea placeholder="Your Message" name="message" rows="4" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
             <div class="flex justify-center">
-              <button type="submit" class="px-8 md:px-12 bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">Send Message</button>
+                <button id="send-btn" type="submit" class="flex items-center justify-center gap-2 px-8 md:px-12 bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    <span id="send-text">Send Message</span>
+                    <i id="send-spinner" class="fas fa-spinner fa-spin hidden"></i>
+                  </button>
+                  
             </div>
-            <h4 class="text-red-700">(This feature is not implemented yet!!)</h4>
+<!--             <h4 class="text-red-700">(This feature is not implemented yet!!)</h4> -->
           </form>
         </div>
       </section>
@@ -165,31 +143,77 @@
   </footer>
 
   <script>
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
-    // Open mobile menu
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenu.classList.remove('translate-x-full');
-      mobileMenu.classList.add('translate-x-0');
-    });
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+  });
 
-    // Close mobile menu
-    mobileMenuClose.addEventListener('click', () => {
+  mobileMenuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+  });
+
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
       mobileMenu.classList.remove('translate-x-0');
       mobileMenu.classList.add('translate-x-full');
     });
+  });
 
-    // Close mobile menu when a link is clicked
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('translate-x-0');
-        mobileMenu.classList.add('translate-x-full');
-      });
+  // EmailJS form submission with spinner icon
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = this.name.value.trim();
+  const email = this.email.value.trim();
+  const message = this.message.value.trim();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!name || !email || !message) {
+    alert("Please fill in all fields before submitting.");
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  const sendBtn = document.getElementById("send-btn");
+  const sendText = document.getElementById("send-text");
+  const sendSpinner = document.getElementById("send-spinner");
+
+  // Show spinner, hide text
+  sendText.classList.add("hidden");
+  sendSpinner.classList.remove("hidden");
+  sendBtn.disabled = true;
+
+  emailjs.sendForm("service_u7qtgsw", "template_n5otr86", this)
+    .then(() => {
+      alert("Message sent! Thanks for reaching out.");
+      this.reset();
+    })
+    .catch((err) => {
+      alert("No internet connection!!");
+      console.error("EmailJS error:", err);
+    })
+    .finally(() => {
+      // Revert button
+      sendText.classList.remove("hidden");
+      sendSpinner.classList.add("hidden");
+      sendBtn.disabled = false;
     });
+});
+
+
+
   </script>
 </body>
 </html>
