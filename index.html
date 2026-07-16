@@ -3,46 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shalon Dangol</title>
+  <title>Shalon Dangol | Frontend Developer</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- EmailJS -->
   <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   <script>
     (function() {
       emailjs.init("zVAyq0Ykcdxd0W8e5"); 
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
 
+  <style>
+    /* Modern Font */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Profile Hover Animation */
     @keyframes floatUpDown {
-    0%, 100% { transform: translateY(0) scale(1.05); }
-    50% { transform: translateY(-6px) scale(1.05); }
-  }
-  
-  .animate-bounce-subtle {
-    animation: floatUpDown 3s ease-in-out infinite;
-  }
-  
-  .zoom-effect {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-  
-  .profile-container {
-    overflow: hidden;
-  }
+      0%, 100% { transform: translateY(0) scale(1.05); }
+      50% { transform: translateY(-10px) scale(1.05); }
+    }
+    
+    .profile-container img {
+      transition: transform 0.3s ease;
+    }
+
+    .profile-container:hover img {
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+
+    /* Custom Typing Cursor Blink */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      margin-left: 4px;
+      background-color: #2563eb;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Abstract Blob Animation */
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    .blob {
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+
+    .blob-delay {
+      animation-delay: 2s;
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 font-sans">
-  <header class="sticky top-0 z-50 bg-white shadow-md">
+
+<body class="bg-gradient-to-br from-slate-50 to-gray-200 text-gray-800 overflow-x-hidden">
+
+  <!-- Modern Glassmorphic Navbar -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl shadow-lg border-b border-white/40">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-blue-600">Shalon Dangol</div>
+      <a href="#" class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Shalon.dev
+      </a>
       
-      <div class="hidden md:flex items-center space-x-6">
-        <a href="#about" class="hover:text-blue-600 transition-colors py-2">About</a>
-        <a href="#skills" class="hover:text-blue-600 transition-colors py-2">Skills</a>
-        <a href="#projects" class="hover:text-blue-600 transition-colors py-2">Projects</a>
-        <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">Contact</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="font-medium hover:text-blue-600 transition-colors py-2 relative group">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#skills" class="font-medium hover:text-blue-600 transition-colors py-2 relative group">
+          Skills
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#projects" class="font-medium hover:text-blue-600 transition-colors py-2 relative group">
+          Projects
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 font-medium">Contact</a>
       </div>
       
       <div class="md:hidden">
@@ -52,168 +113,281 @@
       </div>
     </nav>
     
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-      <div class="flex flex-col items-center justify-center h-full space-y-6 relative">
-        <button id="mobile-menu-close" class="absolute top-6 right-6 text-2xl">
-          <i class="fas fa-times"></i>
-        </button>
-        <a href="#about" class="text-2xl hover:text-blue-600 mobile-menu-link">About</a>
-        <a href="#skills" class="text-2xl hover:text-blue-600 mobile-menu-link">Skills</a>
-        <a href="#projects" class="text-2xl hover:text-blue-600 mobile-menu-link">Projects</a>
-        <a href="#contact" class="text-2xl bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 mobile-menu-link">Contact</a>
-      </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center">
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-3xl text-gray-700 hover:text-blue-600 transition-colors">
+        <i class="fas fa-times"></i>
+      </button>
+      <a href="#about" class="text-3xl font-bold my-4 hover:text-blue-600 transition-colors mobile-menu-link">About</a>
+      <a href="#skills" class="text-3xl font-bold my-4 hover:text-blue-600 transition-colors mobile-menu-link">Skills</a>
+      <a href="#projects" class="text-3xl font-bold my-4 hover:text-blue-600 transition-colors mobile-menu-link">Projects</a>
+      <a href="#contact" class="text-xl bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 mt-6 mobile-menu-link">Contact Me</a>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-12">
-    <section id="about" class="flex items-center min-h-[80vh] animate-fade-in">
-      <div class="w-full grid md:grid-cols-2 gap-8 items-center">
-        <div class="flex justify-center">
-            <div class="w-64 h-64 bg-blue-100 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow profile-container">
-              <img src="pp.jpg" alt="Shalon" class="w-full h-full object-cover animate-bounce-subtle zoom-effect">
-            </div>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative flex items-center min-h-[85vh] overflow-hidden">
+      
+      <!-- Abstract Background Blobs -->
+      <div class="absolute top-10 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 blob"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 blob blob-delay"></div>
+
+      <div class="w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+        
+        <!-- Profile Image -->
+        <div class="flex justify-center" data-aos="zoom-in" data-aos-duration="800">
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white/50 profile-container bg-blue-100">
+            <img src="pp.jpg" alt="Shalon Dangol" class="w-full h-full object-cover scale-105">
           </div>
-        <div>
-          <h1 class="text-4xl font-bold mb-4">Hi, I'm <span class="text-blue-600">Shalon</span></h1>
-          <p class="text-lg mb-6 text-gray-600">A passionate Junior React Developer with a strong foundation in frontend technologies. Recently graduated with a degree in Bachelor in Computer Application (BCA).
-        </p>
-          <div class="flex space-x-4">
-            <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">View Work</a>
-            <a href="#contact" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition-colors">Hire Me</a>
+        </div>
+
+        <!-- Hero Text -->
+        <div data-aos="fade-right" data-aos-duration="800">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+            Hi, I'm <br>
+            <span class="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 bg-clip-text text-transparent">Shalon</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl mb-8 text-gray-600 font-medium">
+            A passionate <span id="typed-text" class="text-blue-600 font-bold"></span><span class="typing-cursor">|</span>
+          </p>
+          
+          <p class="text-base mb-8 text-gray-500 leading-relaxed max-w-lg">
+            Recently graduated with a degree in Bachelor in Computer Application (BCA), building responsive and interactive web applications.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="bg-blue-600 text-white px-8 py-3.5 rounded-full hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 font-semibold flex items-center gap-2">
+              View Work <i class="fas fa-arrow-down text-sm"></i>
+            </a>
+            <a href="#contact" class="border-2 border-gray-300 text-gray-700 px-8 py-3.5 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all duration-300 font-semibold">
+              Hire Me
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="py-16 px-4">
-        <h2 class="text-4xl font-bold text-center mb-12">My Skills</h2>
-        <div class="flex flex-wrap justify-center gap-8 mx-auto max-w-6xl">
-          <!-- Skill Card 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow w-full min-w-[300px] max-w-sm">
-            <i class="fas fa-code text-5xl text-blue-600 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-            <p class="text-gray-600">Creating responsive and interactive web applications using modern technologies.</p>
-          </div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent" data-aos="fade-up">
+        My Skills
+      </h2>
+      <p class="text-gray-500 text-center mb-16 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">Technologies and tools I use to bring ideas to life.</p>
       
-          <!-- Skill Card 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow w-full min-w-[300px] max-w-sm">
-            <i class="fas fa-mobile-alt text-5xl text-blue-600 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Mobile Development</h3>
-            <p class="text-gray-600">Building cross-platform mobile applications with modern frameworks.</p>
+      <div class="flex flex-wrap justify-center gap-8 mx-auto max-w-6xl">
+        
+        <!-- Skill Card 1 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-md text-center w-full min-w-[300px] max-w-sm border border-transparent hover:border-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 transform hover:-translate-y-3" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-600">
+            <i class="fas fa-code text-2xl text-blue-600 group-hover:text-white transition-colors"></i>
           </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Web Development</h3>
+          <p class="text-gray-500 leading-relaxed">Creating responsive and interactive web applications using modern frameworks like React.</p>
         </div>
-      </section>
+    
+        <!-- Skill Card 2 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-md text-center w-full min-w-[300px] max-w-sm border border-transparent hover:border-purple-400 hover:shadow-[0_0_30px_rgba(147,51,234,0.15)] transition-all duration-500 transform hover:-translate-y-3" data-aos="fade-up" data-aos-delay="250">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-purple-600">
+            <i class="fas fa-mobile-alt text-2xl text-purple-600 group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Mobile Development</h3>
+          <p class="text-gray-500 leading-relaxed">Building cross-platform mobile applications with modern, flexible frameworks.</p>
+        </div>
 
-    <section id="projects" class="py-16">
-      <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-      <h3 class="text-3xl font-bold text-center mb-12">Coming Soon ...</h3>
-
+      </div>
     </section>
 
-    <section id="contact" class="py-16 bg-blue-50 rounded-lg">
-        <div class="max-w-xl mx-auto text-center px-4 sm:px-6">
-          <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
-          <p class="text-gray-600 mb-8">Interested in collaboration or have a project in mind? Drop me a message!</p>
-          <form id="contact-form" class="space-y-4 max-w-md mx-auto">
-            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <textarea placeholder="Your Message" name="message" rows="4" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            <div class="flex justify-center">
-                <button id="send-btn" type="submit" class="flex items-center justify-center gap-2 px-8 md:px-12 bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
-                    <span id="send-text">Send Message</span>
-                    <i id="send-spinner" class="fas fa-spinner fa-spin hidden"></i>
-                  </button>
-                  
-            </div>
-<!--             <h4 class="text-red-700">(This feature is not implemented yet!!)</h4> -->
-          </form>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent" data-aos="fade-up">
+        Featured Projects
+      </h2>
+      <p class="text-gray-500 text-center mb-16 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">A selection of things I've built.</p>
+
+      <!-- Modern Coming Soon Placeholders -->
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <div class="bg-white rounded-2xl border-2 border-dashed border-gray-300 p-12 flex flex-col items-center justify-center text-center hover:border-blue-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-hard-hat text-2xl text-gray-400"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Project Alpha</h3>
+          <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-1 rounded-full">Under Construction</span>
         </div>
-      </section>
+
+        <div class="bg-white rounded-2xl border-2 border-dashed border-gray-300 p-12 flex flex-col items-center justify-center text-center hover:border-purple-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="250">
+          <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-rocket text-2xl text-gray-400"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Project Beta</h3>
+          <span class="text-sm font-semibold text-purple-600 bg-purple-50 px-4 py-1 rounded-full">Coming Soon</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+      <div class="max-w-2xl mx-auto bg-white/60 backdrop-blur-sm rounded-3xl shadow-xl border border-white/40 p-8 md:p-12" data-aos="fade-up">
+        <div class="text-center mb-10">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent">Let's Connect</h2>
+          <p class="text-gray-500">Interested in collaboration or have a project in mind? Drop me a message!</p>
+        </div>
+        
+        <form id="contact-form" class="space-y-5">
+          <div>
+            <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Your Email" required class="w-full p-4 rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+          </div>
+          <div>
+            <textarea placeholder="Your Message" name="message" rows="5" required class="w-full p-4 rounded-xl border border-gray-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"></textarea>
+          </div>
+          <div class="flex justify-center pt-2">
+              <button id="send-btn" type="submit" class="flex items-center justify-center gap-3 px-10 bg-blue-600 text-white p-4 rounded-xl hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 font-semibold text-lg w-full md:w-auto">
+                  <span id="send-text">Send Message</span>
+                  <i id="send-spinner" class="fas fa-spinner fa-spin hidden"></i>
+                  <i id="send-icon" class="fas fa-paper-plane text-sm"></i>
+              </button>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <div>&copy; 2025 Shalon. All Rights Reserved.</div>
-      <div class="flex space-x-4">
-        <a href="https://www.linkedin.com/in/shalon-dangol/" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shalon-dangol" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
-        <!-- <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a> -->
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="font-medium">&copy; 2025 Shalon Dangol. All Rights Reserved.</div>
+      <div class="flex space-x-6 text-xl">
+        <a href="https://www.linkedin.com/in/shalon-dangol/" target="_blank" class="hover:text-blue-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shalon-dangol" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </footer>
 
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
-  // Mobile Menu Toggle
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true, 
+      offset: 80
+    });
 
-  mobileMenuToggle.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-full');
-    mobileMenu.classList.add('translate-x-0');
-  });
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
-  mobileMenuClose.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-0');
-    mobileMenu.classList.add('translate-x-full');
-  });
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
 
-  mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    mobileMenuClose.addEventListener('click', () => {
       mobileMenu.classList.remove('translate-x-0');
       mobileMenu.classList.add('translate-x-full');
     });
-  });
 
-  // EmailJS form submission with spinner icon
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const name = this.name.value.trim();
-  const email = this.email.value.trim();
-  const message = this.message.value.trim();
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!name || !email || !message) {
-    alert("Please fill in all fields before submitting.");
-    return;
-  }
-
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  const sendBtn = document.getElementById("send-btn");
-  const sendText = document.getElementById("send-text");
-  const sendSpinner = document.getElementById("send-spinner");
-
-  // Show spinner, hide text
-  sendText.classList.add("hidden");
-  sendSpinner.classList.remove("hidden");
-  sendBtn.disabled = true;
-
-  emailjs.sendForm("service_u7qtgsw", "template_n5otr86", this)
-    .then(() => {
-      alert("Message sent! Thanks for reaching out.");
-      this.reset();
-    })
-    .catch((err) => {
-      alert("No internet connection!!");
-      console.error("EmailJS error:", err);
-    })
-    .finally(() => {
-      // Revert button
-      sendText.classList.remove("hidden");
-      sendSpinner.classList.add("hidden");
-      sendBtn.disabled = false;
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+      });
     });
-});
+
+    // Typing Effect
+    const textArray = ["Junior React Developer.", "Frontend Enthusiast.", "BCA Graduate.", "UI/UX Explorer."];
+    let textIndex = 0, charIndex = 0, isDeleting = false;
+    const typedText = document.getElementById("typed-text");
+
+    function type() {
+      const currentText = textArray[textIndex];
+      
+      if (isDeleting) {
+        typedText.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedText.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === currentText.length) {
+        speed = 2000; // Pause at end of word
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % textArray.length;
+        speed = 500; // Pause before typing next word
+      }
+      
+      setTimeout(type, speed);
+    }
+    
+    // Start typing animation slightly after page load
+    setTimeout(type, 1000);
 
 
+    // EmailJS form submission
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
 
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields before submitting.");
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      const sendBtn = document.getElementById("send-btn");
+      const sendText = document.getElementById("send-text");
+      const sendSpinner = document.getElementById("send-spinner");
+      const sendIcon = document.getElementById("send-icon");
+
+      // Show spinner, hide text and icon
+      sendText.classList.add("hidden");
+      sendIcon.classList.add("hidden");
+      sendSpinner.classList.remove("hidden");
+      sendBtn.disabled = true;
+      sendBtn.classList.add("opacity-80", "cursor-not-allowed");
+
+      emailjs.sendForm("service_u7qtgsw", "template_n5otr86", this)
+        .then(() => {
+          alert("Message sent successfully! Thanks for reaching out.");
+          this.reset();
+        })
+        .catch((err) => {
+          alert("Failed to send message. Please check your internet connection.");
+          console.error("EmailJS error:", err);
+        })
+        .finally(() => {
+          // Revert button state
+          sendText.classList.remove("hidden");
+          sendIcon.classList.remove("hidden");
+          sendSpinner.classList.add("hidden");
+          sendBtn.disabled = false;
+          sendBtn.classList.remove("opacity-80", "cursor-not-allowed");
+        });
+    });
   </script>
 </body>
 </html>
