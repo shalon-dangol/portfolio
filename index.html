@@ -22,23 +22,25 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Prevents horizontal scroll from the image sliding in */
     }
 
     html { scroll-behavior: smooth; }
 
-    /* Initial hidden states for GSAP */
+    /* --- UPDATED INITIAL HIDDEN STATES --- */
     .hero-img {
-      transform: scale(0.8) rotate(-5deg);
+      transform: translateX(-120%) rotate(-25deg); /* Start off-screen left and heavily rotated */
       opacity: 0;
     }
     .hero-text {
-      transform: translateY(100%);
+      transform: translateX(120%); /* Start off-screen right */
     }
     .hero-sub {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateX(80px); /* Start slightly to the right */
     }
+    /* -------------------------------------- */
+
     .section-title {
       transform: translateY(100%);
     }
@@ -84,7 +86,6 @@
   </style>
 </head>
 
-<!-- Dark Mode Body & Background -->
 <body class="bg-gradient-to-br from-gray-950 via-gray-900 to-black text-gray-100">
 
   <!-- Dark Glassmorphic Navbar -->
@@ -127,14 +128,12 @@
     <!-- Hero Section -->
     <section id="about" class="relative flex items-center min-h-[85vh] overflow-hidden">
       
-      <!-- Darker Blobs for Dark Mode -->
       <div class="blob absolute top-10 left-10 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl opacity-20 parallax-blob"></div>
       <div class="blob blob-delay absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl opacity-20 parallax-blob"></div>
 
       <div class="w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
         
         <div class="flex justify-center hero-img-container">
-          <!-- Subtle border for dark mode -->
           <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-black/50 border-4 border-white/10 bg-gray-800 hero-img">
             <img src="pp.jpg" alt="Shalon Dangol" class="w-full h-full object-cover scale-110">
           </div>
@@ -180,8 +179,6 @@
       </div>
       
       <div class="flex flex-wrap justify-center gap-8 mx-auto max-w-6xl">
-        
-        <!-- Dark Skill Card 1 -->
         <div class="skill-card group bg-gray-800/50 p-8 rounded-2xl text-center w-full min-w-[300px] max-w-sm border border-gray-700/50 hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-500 backdrop-blur-sm">
           <div class="w-16 h-16 bg-blue-900/50 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-600">
             <i class="fas fa-code text-2xl text-blue-400 group-hover:text-white transition-colors"></i>
@@ -190,7 +187,6 @@
           <p class="text-gray-400 leading-relaxed">Creating responsive and interactive web applications using modern frameworks like React.</p>
         </div>
     
-        <!-- Dark Skill Card 2 -->
         <div class="skill-card group bg-gray-800/50 p-8 rounded-2xl text-center w-full min-w-[300px] max-w-sm border border-gray-700/50 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-500 backdrop-blur-sm">
           <div class="w-16 h-16 bg-purple-900/50 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-purple-600">
             <i class="fas fa-mobile-alt text-2xl text-purple-400 group-hover:text-white transition-colors"></i>
@@ -198,7 +194,6 @@
           <h3 class="text-xl font-bold mb-3 text-white">Mobile Development</h3>
           <p class="text-gray-400 leading-relaxed">Building cross-platform mobile applications with modern, flexible frameworks.</p>
         </div>
-
       </div>
     </section>
 
@@ -212,8 +207,6 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        
-        <!-- Dark Project Card 1 -->
         <div class="project-card bg-gray-800/50 rounded-2xl border-2 border-dashed border-gray-700 p-12 flex flex-col items-center justify-center text-center hover:border-blue-500 transition-colors duration-300 backdrop-blur-sm">
           <div class="w-16 h-16 bg-gray-700/50 rounded-full flex items-center justify-center mb-6">
             <i class="fas fa-hard-hat text-2xl text-gray-500"></i>
@@ -222,7 +215,6 @@
           <span class="text-sm font-semibold text-blue-400 bg-blue-900/30 px-4 py-1 rounded-full">Under Construction</span>
         </div>
 
-        <!-- Dark Project Card 2 -->
         <div class="project-card bg-gray-800/50 rounded-2xl border-2 border-dashed border-gray-700 p-12 flex flex-col items-center justify-center text-center hover:border-purple-500 transition-colors duration-300 backdrop-blur-sm">
           <div class="w-16 h-16 bg-gray-700/50 rounded-full flex items-center justify-center mb-6">
             <i class="fas fa-rocket text-2xl text-gray-500"></i>
@@ -230,13 +222,11 @@
           <h3 class="text-xl font-bold text-gray-200 mb-2">Project Beta</h3>
           <span class="text-sm font-semibold text-purple-400 bg-purple-900/30 px-4 py-1 rounded-full">Coming Soon</span>
         </div>
-
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-24">
-      <!-- Dark Contact Container -->
       <div class="max-w-2xl mx-auto bg-gray-800/30 backdrop-blur-sm rounded-3xl shadow-xl shadow-black/20 border border-gray-700/50 p-8 md:p-12 contact-container">
         <div class="text-center mb-10">
           <div class="overflow-hidden">
@@ -247,7 +237,6 @@
         
         <form id="contact-form" class="space-y-5">
           <div class="form-field">
-            <!-- Dark Inputs with visible placeholder text -->
             <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded-xl border border-gray-700 bg-gray-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
           </div>
           <div class="form-field">
@@ -268,7 +257,6 @@
     </section>
   </main>
 
-  <!-- Pure Black Footer -->
   <footer class="bg-black text-gray-500 py-8 border-t border-white/5">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="font-medium">&copy; 2025 Shalon Dangol. All Rights Reserved.</div>
@@ -330,16 +318,21 @@
       ignoreMobileResize: true 
     });
 
+    // 1. Master Page Load Timeline (Updated Directions)
     const masterTl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
     masterTl
       .from("#navbar", { y: -100, opacity: 0, duration: 1 })
-      .to(".hero-img", { scale: 1, opacity: 1, rotation: 0, duration: 1.2, ease: "back.out(1.7)" }, "-=0.7")
-      .to(".hero-text", { y: "0%", duration: 1, stagger: 0.15, ease: "power4.out" }, "-=0.8")
-      .to(".hero-sub", { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
+      // Image comes from LEFT and rotates into place
+      .to(".hero-img", { x: 0, rotation: 0, opacity: 1, duration: 1.4, ease: "back.out(1.2)" }, "-=0.7")
+      // Text comes from RIGHT
+      .to(".hero-text", { x: 0, duration: 1, stagger: 0.15, ease: "power4.out" }, "-=1.1") 
+      // Sub-content comes from RIGHT
+      .to(".hero-sub", { opacity: 1, x: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
       .call(() => { cursor.classList.remove('opacity-0'); type(); }, null, "-=0.4");
 
 
+    // 2. Parallax on Hero Blobs & Image
     if (window.innerWidth > 768) { 
       gsap.to(".parallax-blob", {
         y: -200, ease: "none",
@@ -351,6 +344,7 @@
       });
     }
 
+    // 3. Section Titles 
     document.querySelectorAll('.section-title').forEach(title => {
       gsap.to(title, {
         y: "0%", duration: 1, ease: "power3.out",
@@ -365,16 +359,19 @@
       });
     });
 
+    // 4. Skills Cards 
     gsap.to(".skill-card", {
       scale: 1, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.4)",
       scrollTrigger: { trigger: "#skills", start: "top 85%" }
     });
 
+    // 5. Projects Cards 
     gsap.to(".project-card", {
       y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out",
       scrollTrigger: { trigger: "#projects", start: "top 85%" }
     });
 
+    // 6. Contact Form 
     gsap.to(".contact-container", {
       opacity: 1, y: 0, duration: 0.8,
       scrollTrigger: { trigger: "#contact", start: "top 85%" }
@@ -385,6 +382,7 @@
       scrollTrigger: { trigger: "#contact", start: "top 85%" }
     });
 
+    // 7. Magnetic Button Effect 
     if (!('ontouchstart' in window)) {
       document.querySelectorAll('.magnetic-btn').forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
